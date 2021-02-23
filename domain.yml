@@ -1,0 +1,139 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - hello_word
+  - out_of_scope
+  - create_account
+  - check_balance_account
+  - transfer_to_account
+  - loan
+  - affirm_has_account
+  - does_not_have_account
+  - ask_time
+
+entities:
+  - time
+  - service_name
+  - cust_sex
+  - cust_cmnd
+  - cust_account_number
+  - cust_transfer_account_number
+  - cust_transfer_account_money
+
+slots:
+  time:
+    type: any
+  service_name:
+    type: text
+  cust_name:
+    type: text
+  cust_sex:
+    type: text
+    initial_value: 'Quý khách'
+  cust_cmnd:
+    type: text
+  cust_account_number:
+    type: text
+  cust_transfer_account_number:
+    type: text
+    influence_conversation: false
+  cust_transfer_account_money:
+    type: text
+    influence_conversation: false
+
+responses:
+  utter_greet:
+  - text: "Xin chào quý khách.Bên em có thể giúp gì cho quý khách ạ?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Tạm biệt quý khách."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_cust_name:
+  - text: "Tên {cust_sex} là gì ạ ?"
+
+  utter_ask_cust_account_number:
+  - text: "số tài khoản của {cust_sex} là gì ạ ?"
+
+  utter_ask_cust_cmnd:
+  - text: "số cmnd của {cust_sex} là gì ạ ?"
+
+  utter_ask_cust_transfer_account_number:
+    - text: "số tài khoản của người chuyển khoản cho là gì ạ ?"
+
+  utter_fallback:
+  - text: "xin lỗi {cust_sex}.{cust_sex} có thể đặt lại câu hỏi khác được không ạ."
+
+  utter_submit:
+  - text: "Được rồi {cust_sex} ạ"
+
+  utter_give_account_info:
+  - text: "Tên chủ tài khoản là {cust_name}.Số CMND : {cust_cmnd} "
+
+  utter_ask_cust_loan_number:
+  - text: "{cust_sex} muốn vay bao nhiêu tiền ạ."
+
+  utter_ask_if_cust_has_account:
+  - text: "{cust_sex} có tài khoản chưa ạ."
+
+  utter_ask_if_cust_want_to_do_anything_else:
+    - text: "{cust_sex} có muốn làm gì thêm nữa ko ạ."
+
+  utter_ask_if_cust_want_to_create_account:
+    - text: "{cust_sex} cần có tài khoản để thực hiện dịch vụ này. {cust_sex} có muốn tạo tài khoản ko ạ."
+
+  utter_ask_cust_transfer_account_money:
+    - text: "{cust_sex} muốn chuyển khoản bao nhiêu ạ."
+
+  utter_out_of_scope:
+    - text: "xin lỗi {cust_sex}.{cust_sex} có thể đặt lại câu hỏi liên quan đến dịch vụ được ko ạ."
+
+  utter_feedback_time:
+    - text: "bây giờ là {time}."
+
+actions:
+  - action_hello_world
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+forms:
+  cust_create_account:
+    cust_name:
+    - type: from_text
+    cust_cmnd:
+    - type: from_text
+  cust_account_form:
+    cust_name:
+    - type: from_text
+    cust_cmnd:
+    - type: from_text
+    cust_account_number:
+    - type: from_text
+  cust_transfer_account:
+    cust_account_number:
+    - type: from_text
+    cust_transfer_account_number:
+    - type: from_text
+    cust_transfer_account_money:
+    - type: from_text

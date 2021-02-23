@@ -1,0 +1,84 @@
+version: "2.0"
+stories:
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: hello word
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: hello_word
+  - action: action_hello_world
+
+- story: ask time
+  steps:
+  - intent: ask_time
+  - action: utter_feedback_time
+
+- story: ask for service create account
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: create_account
+  - action: cust_create_account
+  - active_loop: cust_create_account
+  - slot_was_set:
+      - requested_slot: cust_name
+  - slot_was_set:
+      - cust_name: Lê Đức thắng
+  - slot_was_set:
+      - requested_slot: cust_cmnd
+  - slot_was_set:
+      - cust_cmnd: 0976734190
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_ask_if_cust_want_to_do_anything_else
+
+- story: ask for service transfer to account and cust has a account
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: transfer_to_account
+  - action: utter_ask_if_cust_has_account
+  - intent: affirm_has_account
+  - action: cust_transfer_account
+  - active_loop: cust_transfer_account
+  - slot_was_set:
+      - requested_slot: cust_account_number
+  - slot_was_set:
+      - cust_account_number: 123123123123
+  - slot_was_set:
+      - requested_slot: cust_transfer_account_number
+  - slot_was_set:
+      - cust_transfer_account_number: 456456456456
+  - slot_was_set:
+      - requested_slot: cust_transfer_account_money
+  - slot_was_set:
+      - cust_transfer_account_money: 10.000.000
+  - slot_was_set:
+      - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: utter_ask_if_cust_want_to_do_anything_else
+
+

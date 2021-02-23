@@ -1,0 +1,235 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Xin chào
+    - Bạn ơi cho mình hỏi
+    - em ơi, cho anh hỏi
+    - em ơi, cho chị hỏi
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - chốt
+    - đồng ý
+    - ok
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - đúng rồi
+
+- intent: thankyou
+  examples: |
+    - cảm ơn em nhá
+    - thanks em nha
+    - cảm ơn nha
+    - good job
+    - thank you
+    - cảm ơn bot nha
+    - thanks bot
+    - cảm ơn
+    - thank you so much
+    - great! Thanks
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - wonderful
+    - tuyệt vời
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: create_account
+  examples: |
+    - [Chị](cust_sex) muốn [lập tài khoản](service_name)
+    - [Anh](cust_sex) muốn [lập tài khoản](service_name)
+    - Em muốn [lập tài khoản](service_name)
+    - mình muốn [lập tài khoản](service_name)
+    - [chú](cust_sex) muốn [lập tài khoản](service_name)
+    - [bác](cust_sex) muốn [lập tài khoản](service_name)
+    - [cô](cust_sex) muốn [lập tài khoản](service_name)
+    - tôi muốn [lập tài khoản](service_name)
+    - [Chị](cust_sex) muốn [tạo tài khoản](service_name:lập tài khoản)
+    - Anh muốn [tạo tài khoản](service_name:lập tài khoản)
+    - Em muốn [tạo tài khoản](service_name:lập tài khoản)
+    - mình muốn [tạo tài khoản](service_name:lập tài khoản)
+    - [chú](cust_sex) muốn [tạo tài khoản](service_name:lập tài khoản)
+    - [bác](cust_sex) muốn [tạo tài khoản](service_name:lập tài khoản)
+    - [cô](cust_sex) muốn [tạo tài khoản](service_name:lập tài khoản)
+    - tôi muốn [tạo tài khoản](service_name:lập tài khoản)
+
+- intent: check_balance_account
+  examples: |
+    - [Chị](cust_sex) muốn [check số dư tài khoản](service_name)
+    - [Anh](cust_sex) muốn [check số dư tài khoản](service_name)
+    - Em muốn [check số dư tài khoản](service_name)
+    - mình muốn [check số dư tài khoản](service_name)
+    - tôi muốn [check số dư tài khoản](service_name)
+    - [chú](cust_sex) muốn [check số dư tài khoản](service_name)
+    - [bác](cust_sex) muốn [check số dư tài khoản](service_name)
+    - [cô](cust_sex) muốn [check số dư tài khoản](service_name)
+    - [Chị](cust_sex) muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - [Anh](cust_sex) muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - Em muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - mình muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - tôi muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - [chú](cust_sex) muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - [bác](cust_sex) muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - [cô](cust_sex) muốn [kiểm tra số dư tài khoản](service_name:check số dư tài khoản)
+    - [Chị](cust_sex) muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - [Anh](cust_sex) muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - Em muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - mình muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - tôi muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - [chú](cust_sex) muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - [bác](cust_sex) muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+    - [cô](cust_sex) muốn [xem số dư tài khoản](service_name:check số dư tài khoản)
+
+- intent: transfer_to_account
+  examples: |
+    - [Chị](cust_sex) muốn [chuyển khoản](service_name)
+    - [Anh](cust_sex) muốn [chuyển khoản](service_name)
+    - Em muốn [chuyển khoản](service_name)
+    - mình muốn [chuyển khoản](service_name)
+    - tôi muốn [chuyển khoản](service_name)
+    - [chú](cust_sex) muốn [chuyển khoản](service_name)
+    - [bác](cust_sex) muốn [chuyển khoản](service_name)
+    - [cô](cust_sex) muốn [chuyển khoản](service_name)
+
+- intent: loan
+  examples: |
+    - [Chị](cust_sex) muốn [vay tiền](service_name)
+    - [Anh](cust_sex) muốn [vay tiền](service_name)
+    - Em muốn [vay tiền](service_name)
+    - mình muốn [vay tiền](service_name)
+    - tôi muốn [vay tiền](service_name)
+    - [chú](cust_sex) muốn [vay tiền](service_name)
+    - [bác](cust_sex) muốn [vay tiền](service_name)
+    - [cô](cust_sex) muốn [vay tiền](service_name)
+
+- intent: affirm_has_account
+  examples: |
+    - [Chị](cust_sex) có tài khoản rồi
+    - [Anh](cust_sex) có tài khoản rồi
+    - Em có tài khoản rồi
+    - mình có tài khoản rồi
+    - tôi có tài khoản rồi
+    - [chú](cust_sex) có tài khoản rồi
+    - [bác](cust_sex) có tài khoản rồi
+    - [cô](cust_sex) có tài khoản rồi
+    - [Chị](cust_sex) đã có tài khoản rồi
+    - [Anh](cust_sex) đã có tài khoản rồi
+    - Em đã có tài khoản rồi
+    - mình đã có tài khoản rồi
+    - tôi đã có tài khoản rồi
+    - [chú](cust_sex) đã có tài khoản rồi
+    - [bác](cust_sex) đã có tài khoản rồi
+    - [cô](cust_sex) đã có tài khoản rồi
+
+- intent: does_not_have_account
+  examples: |
+    - [Chị](cust_sex) chưa có tài khoản
+    - [Anh](cust_sex) chưa có tài khoản
+    - Em chưa có tài khoản
+    - mình chưa có tài khoản
+    - tôi chưa có tài khoản
+    - [chú](cust_sex) chưa có tài khoản
+    - [bác](cust_sex) chưa có tài khoản
+    - [cô](cust_sex) chưa có tài khoản
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - 2 + 2 bằng bao nhiêu
+    - Who's the US President?
+
+- intent: ask_time
+  examples: |
+    - bây giờ là mấy giờ ?
+
+- intent: hello_word
+  examples: |
+    - test action
+
+- intent: cust_give_name
+  examples: |
+    - [Chị](cust_sex) tên là [thắng](cust_name)
+    - [Anh](cust_sex) tên là [thắng](cust_name)
+    - Em tên là [thắng](cust_name)
+    - mình tên là [thắng](cust_name)
+    - tôi tên là [thắng](cust_name)
+    - [chú](cust_sex) tên là [thắng](cust_name)
+    - [bác](cust_sex) tên là [thắng](cust_name)
+    - [cô](cust_sex) tên là [thắng](cust_name)
+    - tên [Chị](cust_sex) là [thắng](cust_name)
+    - tên là [Anh](cust_sex) [thắng](cust_name)
+    - tên Em là [thắng](cust_name)
+    - tên mình là [thắng](cust_name)
+    - tên tôi là [thắng](cust_name)
+    - tên [chú](cust_sex) là [thắng](cust_name)
+    - tên [bác](cust_sex) là [thắng](cust_name)
+    - tên [cô](cust_sex) là [thắng](cust_name)

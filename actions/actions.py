@@ -263,6 +263,7 @@ class ActiobSetName(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         return [SlotSet("cust_name", tracker.get_slot('name'))]
 
+
 class ActiobSetCmnd(Action):
 
     def name(self):
@@ -316,7 +317,7 @@ class ActionCheckLoanMax(Action):
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         balance = CheckBalance(tracker.get_slot("cust_name"),tracker.get_slot("cust_cmnd"),tracker.get_slot("cust_account_number"))
         loan_max = balance + balance * 0.6
-        dispatcher.utter_message(text=f'Hạn vay tối đa của quý khách là {loan_max}')
+        dispatcher.utter_message(text=f'khoản vay tối đa của quý khách là {loan_max}')
         return[]
 
 class ActionCheckLogin(Action):
@@ -404,6 +405,18 @@ class ValidateCustSignIn(FormValidationAction):
             # validation failed, set this slot to None so that the
             # user will be asked for the slot again
             return {"cust_account_number": None}
+
+class ActionResetAccount(Action):
+
+    def name(self):
+        return "action_reset_account"
+
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("cust_name", None),
+                SlotSet("cust_cmnd", None),
+                SlotSet("cust_account_number", None),
+                SlotSet("name", None),
+                SlotSet("cmnd", None)]
 
 class ActionLogin(Action):
     def name(self) -> Text:

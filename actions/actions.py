@@ -163,7 +163,6 @@ class ActionListServiceName(Action):
 
     def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         list_service = getServiceName()
-        dispatcher.utter_message("Danh sách dịch vụ:")
         text = (
             "Danh sách dịch vụ:"
         )

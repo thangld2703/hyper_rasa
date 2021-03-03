@@ -170,8 +170,17 @@ class ActionListServiceName(Action):
         count = 0;
         buttons = []
         for row in list_service:
+            intent = ''
+            if row[0] == 'Xem số dư tài khoản':
+                intent = 'check_balance_account'
+            elif row[0] == 'Đăng ký tài khoản':
+                intent = 'create_account'
+            elif row[0] == 'Xem khoản vay tối đa':
+                intent = 'check_loan_max'
+            elif row[0] == 'Đăng nhập tài khoản':
+                intent = 'cust_sign_in'
             count = count + 1
-            buttons.append({"payload": f"/{row[0]}", "title": f"{count} {row[0]}"})
+            buttons.append({"payload": f"/{intent}", "title": f"{row[0]}"})
         dispatcher.utter_message(text=text, buttons=buttons)
         return []
 
